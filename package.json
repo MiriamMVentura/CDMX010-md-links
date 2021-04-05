@@ -1,4 +1,32 @@
 {
   "name": "md-links",
-  "version": "0.1.0"
+  "version": "0.1.0",
+  "description": "vamos a buscar links caídos",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "eslint": "eslint --ext .js test/",
+    "pretest": "npm run eslint",
+    "test": "jest --verbose --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MiriamMVentura/CDMX010-md-links.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MiriamMVentura/CDMX010-md-links/issues"
+  },
+  "homepage": "https://github.com/MiriamMVentura/CDMX010-md-links#readme",
+  "devDependencies": {
+    "eslint": "^7.23.0",
+    "jest": "^26.6.3"
+  },
+  "dependencies": {
+    "chalk": "^4.1.0"
+  }
 }
