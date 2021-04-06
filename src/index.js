@@ -1,40 +1,57 @@
-module.exports = () => {
-  // ...
-};
-
-// --- prueba de export/require
-// Trayendo nuestro modulo, accediendo a su ruta
-const modulo = require('./mdLinks');
-// ejecutar una funcion del modulo
-// ejecutar el onjeto con propiedad
-console.log(modulo.prop1);
-
-modulo.saludar();
-
-// leer, escribir y eliminar un archivo
+#!/usr/bin/env node
+'use strict';
+const path = require('path');
 const fs = require('fs');
-const chalk = require('chalk');
+const modulo = require('./mdLinks');
 
-function read(ruta, cb) {
-  fs.readFile(ruta, (err, data) => {
-      cb(data.toString());
+// -- quiero comproabar si la ruta de los archivos y directorios son validos
+
+// -- quiero ver todos los arcivos que contiene mi carpeta "directory"
+// fs.readdir('./src/directory', (error, files) => {
+//   if (error) {
+//     throw error
+//   }
+//   console.log('archivos encontrados:');
+//   console.log(files);
+// });
+
+// --- quiero saber las rutas de mis archivos
+
+
+
+// // ---- quiero leer el contenido de un archivo  e imprimirlo en la consola
+// function read(ruta, cb) {
+//   fs.readFile(ruta, 'UTF-8', (err, data) => {
+//     cb(data);
+//   })
+// }
+// read(__dirname + '/directory/definitionGlitch.txt', console.log)
+
+
+
+
+// // --- quiero saber la extención de mi archivo
+
+// --- modulo de  saludo e instrucciones sueltas que llamaré poco a poco
+modulo.intro();
+console.log(modulo.stepOne);
+
+fs.readdir('./src/directory', (error, files) => {
+    if (error) {
+        console.error('No he podido leer el directorio', error);
+    } else {
+        console.log(files);
+    }
+    fs.readFile('./src/directory/glitchArtGenerator.md', 'UTF-8', (error, data) => {
+      if (error) {
+        console.error('No he podido leer el archivo', error);
+    } else {
+        console.log(data);
+    }
+    });
+    console.log('El archivo "glitchArtGenerator.md" contiene lo siguiente:');
   })
-}
 
-function write(ruta, contenido, cb) {
-  fs.writeFile(ruta, contenido, function (err) {
-      if (err) {
-          console.error('No he podido escribirlo', err);
-      } else {
-          console.log(chalk.bold.yellow('El archivo se ha escrito correctamente'));
-      }
-  });
-}
-
-function toTrash(ruta, cb) {
-  fs.unlink(ruta, cb);
-}
-
-read(__dirname + '/glitchInvest/definitionGlitch.txt', console.log)
-write(__dirname + '/glitchInvest/archivoxxx.txt', 'vuelvo a escribir sobre el error, no soy un archivo .md', console.log);
-// toTrash(__dirname + '/glitchInvest/archivoxxx.txt', console.log);
+// module.exports = () => {
+//   // ...
+// };

@@ -1,12 +1,15 @@
+'use strict';
+
 const chalk = require('chalk');
 
-// creando el módulo saludar
-function saludar() {
-  console.log(chalk.italic.blue('Hola mundo!!'));
+// creando el módulo instrucci
+function intro() {
+  console.log(chalk.bold.blue('Hola'));
+  console.log(chalk.bold.blue('Instrucciones:'));
 }
 
 // eportando el modulo
 module.exports = {
-  saludar,
-  prop1: 'Hola que tal'
+  intro,
+  stepOne: 'estos son todos los archivos en tu directorio'
 };
