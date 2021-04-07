@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "start": "nodemon src/index.js",
+    "start": "nodemon src/cli.js",
     "eslint": "eslint --ext .js test/",
     "pretest": "npm run eslint",
     "test": "jest --verbose --coverage"
@@ -32,6 +32,7 @@
     "@babel/core": "^7.13.14",
     "@babel/node": "^7.13.13",
     "@babel/preset-env": "^7.13.12",
+    "ascii-art": "^2.5.0",
     "chalk": "^4.1.0",
     "inquirer": "^8.0.0",
     "marked": "^2.0.1",
