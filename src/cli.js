@@ -6,7 +6,11 @@ const art = require('ascii-art');
 // const process = require('process');
 const modulo = require('./index');
 
-
+// creando el módulo de vienvenida
+function intro() {
+  console.log(chalk.bold.blue('Hola, bienvenidx a Glitch-CLI'));
+  console.log(chalk.bold.blue('archivos filtrados...'));
+}
 
 
 // --- modulo de  saludo e instrucciones sueltas que llamaré poco a poco
