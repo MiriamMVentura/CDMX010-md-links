@@ -1,8 +1,7 @@
-#!/usr/bin/env node
 'use strict';
 const chalk = require('chalk');
 const art = require('ascii-art');
-// const inquirer = require('inquirer');
+const inquirer = require('inquirer');
 // const process = require('process');
 const modulo = require('./index');
 
@@ -13,7 +12,7 @@ function intro() {
 }
 
 
-// --- modulo de  saludo e instrucciones sueltas que llamaré poco a poco
+// --- modulo de instrucciones sueltas que llamaré poco a poco
 modulo.intro();
 console.log(modulo.description);
 
@@ -25,29 +24,26 @@ function message (mess) {
   })
 }
 
-// function selectFile () {
-//   const option = [{
-//       name: 'type',
-//       type: 'list',
-//       message: 'Selecciona el archivo a leer: ',
-//       choices: ['main()']
-//     },
-//   ];
-//   return inquirer.prompt(option);
-// };
-// selectFile();
+function selectFile () {
+  const option = [{
+      name: 'type',
+      type: 'list',
+      message: 'Selecciona el archivo a leer: ',
+      choices: ['main()']
+    },
+  ];
+  return inquirer.prompt(option);
+};
+selectFile();
 
 
 
-// message('Glitch-CLI');
-// message('hola');
+message('Glitch-CLI');
 
 
-// IIFE (Immediately Invoked Function Expression)
-
-// (async() => {
-//   message('Glitch-CLI');
-//  await intro();
-// })();
+(async() => {
+  message('Glitch-CLI');
+  await intro();
+})();
 
 
