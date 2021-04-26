@@ -8,3 +8,14 @@
 //   });
 
 // });
+
+// describe('mdLinks', () => {
+//   it('should be a function', () => {
+//     expect(typeof mdLinks).toBe('function');
+//   });
+//   it('retorna un mensaje de error', () => {
+//     mdLinks ('abcd').then((response)=>{
+//       expect(response).toEqual('no es una ruta valida');
+//   });
+// });
+// })
